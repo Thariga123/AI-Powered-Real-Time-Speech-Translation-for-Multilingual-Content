@@ -82,31 +82,43 @@ Copy code
 
 ## 💻 **Setup & Installation**
 
+Follow these steps to set up and run the project locally 👇  
+
 ### 🧩 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/Thariga123/AI-Powered-Real-Time-Speech-Translation-for-Multilingual-Content.git
+
 cd AI-Powered-Real-Time-Speech-Translation-for-Multilingual-Content
-⚙️ 2️⃣ Create & activate virtual environment
-bash
-Copy code
+
+⚙️ 2️⃣ Create & activate a virtual environment
+
 python -m venv venv
 venv\Scripts\activate   # For Windows
-# or
-source venv/bin/activate   # For Mac/Linux
-📦 3️⃣ Install required dependencies
-bash
-Copy code
-pip install -r requirements.txt
-▶️ 4️⃣ Run the Flask app
-bash
-Copy code
-python app.py
-Then open in browser:
 
-cpp
-Copy code
+📦 3️⃣ Install required dependencies
+
+pip install -r requirements.txt
+
+▶️ 4️⃣ Run the Flask application
+
+python app.py
+
+Then open in your browser:
+
 http://127.0.0.1:5000
+
+💾 5️⃣ (Optional) Create a .gitignore
+
+To avoid uploading unnecessary files:
+
+venv/
+__pycache__/
+uploads/
+*.wav
+*.mp3
+
 🌍 Supported Languages
+
 Code	Language
 en	English
 hi	Hindi
@@ -122,21 +134,23 @@ or	Odia
 ur	Urdu
 
 🧠 Future Enhancements
-🔁 Add bi-directional live translation for conversations
 
-🎥 Integrate video subtitling using Whisper
+🔁 Enable bi-directional live translation for conversations
 
-🧬 Use OpenAI Whisper / Wav2Vec2 for offline speech recognition
+🎥 Add video subtitling using Whisper
 
-⚡ Enable real-time streaming with WebSockets
+🧬 Integrate OpenAI Whisper or Wav2Vec2 for offline speech recognition
 
-☁️ Deploy on Render / AWS / Azure for public access
+⚡ Add real-time streaming translation with WebSockets
+
+☁️ Deploy on Render / AWS / Azure / HuggingFace Spaces
 
 🏁 Project Highlights
-🧠 Uses Google’s and Microsoft’s pre-trained AI models
 
-🎨 Fully responsive, teal glassmorphic UI
+🧠 Powered by Google & Microsoft’s pre-trained AI models
 
-⚙️ Works across browsers with real-time mic translation
+🎨 Fully responsive teal glassmorphic interface
 
-💬 Designed for multilingual communication and accessibility
+⚙️ Works seamlessly across browsers
+
+💬 Designed for accessibility and multilingual communication
