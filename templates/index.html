@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered Real-Time Speech Translation for Multilingual Content</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="background">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <header class="topbar">
+    <h1>🎧 Real-Time Speech Translator</h1>
+    <p>Speak. Stop. Translate — Instantly.</p>
+  </header>
+
+  <main class="main-card">
+    <div class="left-panel">
+      <div class="mic-box">
+        <div class="mic-ring" id="micRing"></div>
+        <button id="startBtn" class="mic-btn btn-primary">🗣️ Start Recording</button>
+        <button id="stopBtn" class="mic-btn btn-stop" disabled>⏹ Stop</button>
+      </div>
+
+      <div class="options">
+        <div class="target-lang-selector">
+          <label for="liveLang">Translate to:</label>
+          <select id="liveLang">
+            {% for code, name in languages.items() %}
+            <option value="{{ code }}" {% if code=='hi' %}selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="gender-selector">
+          <label>Voice Gender:</label>
+          <div class="gender-buttons">
+            <button type="button" class="gender-btn gender-male active" data-gender="male" id="liveGenderMale">👨 Male</button>
+            <button type="button" class="gender-btn gender-female" data-gender="female" id="liveGenderFemale">👩 Female</button>
+          </div>
+        </div>
+
+        <!-- 🌐 Translate Button -->
+        <button id="translateBtn" class="mic-btn btn-translate" disabled>🔄 Translate</button>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div id="liveResult" class="result-box">
+        <div class="text-result">
+          <p><strong>🎙 Recognized:</strong></p>
+          <p id="liveText" class="text-display">...</p>
+          <p><strong> Translated:</strong></p>
+          <p id="translatedText" class="text-display">...</p>
+        </div>
+        <audio id="liveAudio" controls></audio>
+        <div id="liveStatus" class="status"></div>
+        <div class="progress" id="liveProgress" style="display:none;">
+          <div class="progress-bar" id="liveProgressBar"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>🎤 Speech translation system — @2025</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
