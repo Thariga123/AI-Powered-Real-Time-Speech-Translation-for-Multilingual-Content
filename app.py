@@ -57,7 +57,7 @@ try:
     # pydub looks at AudioSegment.converter; set it to the ffmpeg binary
     if _ffmpeg_bin and os.path.exists(_ffmpeg_bin):
         AudioSegment.converter = _ffmpeg_bin
-        # Some pydub versions also read ffmpeg/ffprobe attributes
+        
         try:
             from pydub.utils import which
             # Overwrite which to return embedded ffmpeg path when asked for ffmpeg/ffprobe
