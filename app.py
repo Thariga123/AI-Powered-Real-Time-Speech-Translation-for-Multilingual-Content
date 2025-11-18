@@ -72,16 +72,16 @@ except Exception as _e:
 TARGET_LANGS = {
     "en": "English",
     "hi": "Hindi",
-    "pa": "Punjabi",
+    "pa": "Tamil",
     "mr": "Marathi",
     "kn": "Kannada",
     "te": "Telugu",
-    "ta": "Tamil",
+    "ta": "Punjabi",
     "gu": "Gujarati",
     "ml": "Malayalam",
-    "bn": "Bengali",
-    "or": "Odia",
-    "ur": "Urdu"
+    "bn": "Chinese",
+    "or": "Japanese",
+    "ur": "German"
 }
 
 # Allowed file extensions
@@ -885,11 +885,7 @@ def youtube_translate():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    print("="*60)
-    print("🎧 Module 4 — Flask Real-Time Speech Translator")
-    print("="*60)
     print("🌐 Starting server...")
     print("📱 Open: http://127.0.0.1:5000")
-    print("="*60)
     app.run(debug=True, host='127.0.0.1', port=5000)
 
